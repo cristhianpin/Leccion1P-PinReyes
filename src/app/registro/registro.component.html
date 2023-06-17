@@ -88,5 +88,37 @@
  
       </div>
 
+      <h4> Personas Eliminadas </h4>
+      <table class="table table-striped mt-2">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Cedula  </th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Correo</th>           
+            <th scope="col">fechaNacimiento</th>
+            <th scope="col">Acciones </th>
+          </tr>
+        </thead>
+        <tbody>
+          
+              <tr *ngFor="let programador of listPersonaEli; let i = index">
+            <td>{{ programador.id}}</td>
+            <td>{{ programador.cedula }}</td>
+            <td>{{ programador.nombre }}</td>
+            <td>{{ programador.apellido }}</td>
+            <td>{{ programador.correo }}</td>
+            <td> {{ programador.fecha_nacimiento | date:'dd/MM/yyyy'}}  </td>
+            
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+
+      
+
     </div>
 

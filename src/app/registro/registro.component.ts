@@ -44,11 +44,14 @@ export class RegistroComponent {
 
 
 
-  eliminarPersona(id:number): void{
-    this.listPersona.splice(id,1);
-    //const personaEliminada = this.Programador.find(Programador => Programador.id === id);
+  eliminarPersona(indice:number): void{
+    //this.listPersona.splice(id,1);
+    const estudianteEliminado = this.listPersona.splice(indice, 1)[0];
 
     
+    if (!estudianteEliminado.estado) {
+      this.listPersonaEli.push(estudianteEliminado);
+    }
     
 
   }
