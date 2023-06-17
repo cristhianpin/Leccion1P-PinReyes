@@ -1,0 +1,92 @@
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="id">Id:</label>
+                <input type="text" [(ngModel)]="id" class="form-control" id="id" placeholder="Ingrese el Id">
+            </div>
+        </div>
+
+    <div class="row align-items-center">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="cedula">Cédula:</label>
+                <input type="text" [(ngModel)]="cedula" class="form-control" id="cedula" placeholder="Ingrese la cédula">
+            </div>
+        </div>
+    </div>
+
+    <div class="row align-items-center">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" [(ngModel)]="nombre" class="form-control" id="nombre" placeholder="Ingrese el nombre">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" [(ngModel)]="apellido" class="form-control" id="apellido" placeholder="Ingrese el apellido">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label for="correo">Correo</label>
+                <input type="text" [(ngModel)]="correo" class="form-control" id="correo">
+            </div>
+
+        </div>
+
+        <div class="col-md-2">
+            <div class="form-group">
+                <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+                <input type="Date" [(ngModel)]="fecha_Nacimiento" class="form-control" id="fechaNacimiento">
+            </div>
+
+        </div>
+
+        <div class="col-md-6" style="padding: 10px;">
+            <button type="button" class="btn btn-primary btn-full-width" (click)="agregarPersona()">
+                 Agregar <i class="bi bi-person-plus" > </i>
+            </button>
+        </div>
+
+       
+    <div class="col-lg-6 offset-lg-3 mt-3">
+           
+          
+        <table class="table table-striped mt-2">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Cedula  </th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Correo</th>           
+              <th scope="col">fechaNacimiento</th>
+              <th scope="col">Acciones </th>
+            </tr>
+          </thead>
+          <tbody>
+            
+                <tr *ngFor="let programador of listPersona; let i = index">
+              <td>{{ programador.id}}</td>
+              <td>{{ programador.cedula }}</td>
+              <td>{{ programador.nombre }}</td>
+              <td>{{ programador.apellido }}</td>
+              <td>{{ programador.correo }}</td>
+              <td> {{ programador.fecha_nacimiento | date:'dd/MM/yyyy'}}  </td>
+              <td>
+
+                  <span class="cursor text-danger" (click)="eliminarPersona(i)">
+                    <i class="bi bi-trash2-fill"></i>
+                  </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+ 
+      </div>
+
+    </div>
+
